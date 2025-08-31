@@ -1,7 +1,7 @@
-##Basic Portfolio Website
+# Basic Portfolio Website
 In this project create a responsive, visually appealing website to showcase my projects, skills, and experience.
 
-#Sections
+# Sections
 ```
 Home
 About
