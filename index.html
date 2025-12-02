@@ -11,20 +11,26 @@
 
 <body>
     <header>
-        <nav>
-            <div class="left">Yusra's Portfolio</div>
-            <div class="right">
-                <ul>
-                    <li><a href="#home">Home</a></li>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <a class="logo">Yusra's Portfolio</a>
+                <button class="menu-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#project">Project</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+
             </div>
         </nav>
     </header>
-    <main id="home">
-        <section class="firstsection">
+    <main>
+        <section class="firstsection" id="home">
             <div class="fsleft">
                 <p class="name">Hey, I am Yusra Khan</p>
                 <span id="element"></span>
@@ -41,7 +47,7 @@
             <div class="about-container">
                 <p class="about-text">
                     Hi! I’m <strong>Yusra Khan</strong>, I’m a web development learner focusing on front-end
-                    technologies. I enjoys building clean and responsive web interfaces using HTML, CSS, and JavaScript.
+                    technologies. I enjoy building clean and responsive web interfaces using HTML, CSS, and JavaScript.
                     Currently, I’m learning React and improving my skills through small projects.
                 </p>
 
@@ -50,7 +56,7 @@
                         <a href="mailto:yusrak782@gmail.com">Email : </a>yusrak782@gmail.com
                     </p>
 
-                    <a href="Yusra_Khan_Resume.pdf" target="_blank" class="resume-btn">
+                    <a href="Yusra_Khan.pdf" target="_blank" class="resume-btn">
                         Resume
                     </a>
                 </div>
@@ -116,9 +122,9 @@
                     <i class="fa-brands fa-github"></i>
                 </a>
 
-                <!-- <a href="#" target="_blank">
+                <a href="https://www.linkedin.com/in/yusra-khan-9398ba318" target="_blank">
                     <i class="fa-brands fa-linkedin"></i>
-                </a> -->
+                </a>
 
                 <a href="mailto:yusrak782@gmail.com">
                     <i class="fa-solid fa-envelope"></i>
@@ -133,13 +139,7 @@
     </footer>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-
-    <script>
-        var typed = new Typed('#element', {
-            strings: ['a Web Developer.'],
-            typeSpeed: 50,
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -25,51 +25,144 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-nav {
+.navbar {
     background-color: var(--main-red);
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     height: 50px;
     padding: 0px 5px;
+    width: 100%;
 }
 
-nav ul {
+.navbar-container {
     display: flex;
-    justify-content: center;
-    font-size: 1.1rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+    white-space: nowrap;
+    padding: 0 15px;
 }
 
-.left {
+.navbar-container .nav-menu {
+    display: flex;
     font-size: 1.5rem;
-    font-style: oblique;
+    text-align: center;
+    list-style: none;
 }
 
-nav ul li {
-    list-style: none;
-    margin: 0 15px;
+.logo {
+    font-size: 1.8rem;
+    font-style: oblique;
 }
 
 nav ul li a {
     color: var(--main-white);
     text-decoration: none;
-    padding: 13px 9px;
+    padding: 3px 20px;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
 }
 
 nav ul li a:hover {
     cursor: pointer;
     background-color: #a52836;
+    border: 2px solid #88222e9e;
+}
+
+.menu-toggle {
+    background: transparent;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--main-white);
+    transition: all 0.3s ease-in-out;
 }
 
 nav ul li a:active {
-    background-color: #00aaff;
+    background-color: #00aaffab;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        backdrop-filter: none;
+    }
+
+    .navbar-container .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        align-items: flex-start;
+        gap: 1.7rem !important;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 250px;
+        padding: 5rem 1.5rem;
+        backdrop-filter: blur(10px);
+    }
+
+    .navbar-container .nav-menu.active {
+        display: flex;
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .menu-toggle {
+        display: block;
+        z-index: 999;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar-container {
+        padding: 0 1rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .navbar-container .nav-menu li a {
+        font-size: 1.2rem;
+        padding: 4px 15px;
+    }
+
+    .navbar-container .nav-menu {
+        width: 200px;
+    }
 }
 
 .firstsection {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 80px auto;
+    margin: 100px auto;
     max-width: 1100px;
     gap: 30px;
     padding: 0 20px;
@@ -99,7 +192,7 @@ nav ul li a:active {
 }
 
 .projects {
-    padding: 70px 20px 115px;
+    padding: 70px 20px 125px;
     max-width: 1100px;
     margin: auto;
     font-family: sans-serif;
@@ -175,7 +268,7 @@ hr {
 .footer {
     background: #111;
     color: #ddd;
-    padding: 40px 20px 20px;
+    padding: 40px 20px 27px;
     font-family: sans-serif;
 }
 
@@ -185,7 +278,7 @@ hr {
     flex-wrap: wrap;
     max-width: 1100px;
     margin: auto;
-    gap: 40px;
+    gap: 43px;
 }
 
 .footer-about h3 {
@@ -241,14 +334,14 @@ hr {
 
 .about-section {
     max-width: 900px;
-    margin: 80px auto;
+    margin: 90px auto;
     padding: 20px;
     text-align: center;
 }
 
 .about-section h2 {
     font-size: 2.3rem;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     color: var(--main-white);
 }
 
@@ -262,13 +355,13 @@ hr {
 .about-text {
     font-size: 1.1rem;
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin-bottom: 27px;
     color: var(--main-white);
 }
 
 .about-contact p {
     font-size: 1rem;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .about-contact p a {
@@ -278,7 +371,7 @@ hr {
 
 .resume-btn {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 15px;
     padding: 10px 20px;
     background: #be3144;
     color: white;
@@ -286,8 +379,10 @@ hr {
     font-size: 1rem;
     text-decoration: none;
     transition: 0.3s ease;
+    border: 2px solid transparent;
 }
 
 .resume-btn:hover {
-    background: #a52836;
+    background-color: #a52836;
+    border:2px solid #88222e9e
 }
